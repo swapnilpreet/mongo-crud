@@ -1,0 +1,15 @@
+1)All users whose gender is male         ==>  db.crudData.find({gender: "Male"})
+2)all users whose ID is even             ==>  db.crudData.find({ id: { $mod : [ 2 , 0 ] } } )
+3)Users who currently live in Japan      ==>  db.crudData.find({native: "Japan"})
+4)Users who are female and live in India ==>  db.crudData.find({ gender: "Female" , native: "India"})
+5)Users who are more than 25 years old   ==>  db.crudData.find({ age: { $gt : 25 } })
+6)Users who are less than 50 years       ==>  db.crudData.find({ age: { $lt : 50 } })
+    old and live in United State 
+7)Total number of users who want to      ==>   db.crudData.find({relocate_to: "France"}).count()
+    relocate to France (count only)
+8)Total number of users who are from     ==>  db.crudData.find({native: "United States" , relocate_to: "Russia" }).sort({ age: 1})
+    USA and want to relocate to russia,
+    sort them by age in ascending order
+9)get all users, sort them by total      ==>  db.crudData.find().sort({ family_members: 1, age: -1})
+    number of family member ASC and age 
+    DESC order                
